@@ -1,0 +1,21 @@
+{
+  "name": "PolicyCatalog", "type": "object",
+  "properties": {
+    "name": { "type": "string" },
+    "description": { "type": "string" },
+    "coverage_type": { "type": "string", "enum": ["accident","life","liability","property","health","travel","cyber","cargo"] },
+    "insurer_name": { "type": "string" },
+    "base_premium": { "type": "number" },
+    "currency": { "type": "string", "enum": ["USD","EUR","INR","GBP","BRL"], "default": "USD" },
+    "coverage_amount": { "type": "number" },
+    "duration_days": { "type": "number" },
+    "geographies": { "type": "array", "items": { "type": "string" } },
+    "applicable_verticals": { "type": "array", "items": { "type": "string" } },
+    "risk_context_tags": { "type": "array", "items": { "type": "string" } },
+    "status": { "type": "string", "enum": ["active","inactive","draft"], "default": "draft" },
+    "regulatory_body": { "type": "string" },
+    "license_number": { "type": "string" },
+    "exclusions": { "type": "string" }
+  },
+  "required": ["name", "coverage_type", "insurer_name", "base_premium"]
+}

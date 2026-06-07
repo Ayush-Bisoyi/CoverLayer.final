@@ -1,0 +1,20 @@
+{
+  "name": "Claim", "type": "object",
+  "properties": {
+    "policy_id": { "type": "string" },
+    "policy_number": { "type": "string" },
+    "claimant_email": { "type": "string" },
+    "claimant_name": { "type": "string" },
+    "incident_date": { "type": "string", "format": "date" },
+    "incident_description": { "type": "string" },
+    "claim_amount": { "type": "number" },
+    "currency": { "type": "string", "default": "USD" },
+    "evidence_urls": { "type": "array", "items": { "type": "string" } },
+    "status": { "type": "string", "enum": ["submitted","under_review","approved","rejected","paid"], "default": "submitted" },
+    "ai_triage_summary": { "type": "string" },
+    "ai_severity": { "type": "string", "enum": ["low","medium","high","critical"] },
+    "resolution_notes": { "type": "string" },
+    "resolved_at": { "type": "string", "format": "date-time" }
+  },
+  "required": ["policy_id", "claimant_email", "incident_description"]
+}
