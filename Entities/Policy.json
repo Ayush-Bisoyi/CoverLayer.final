@@ -1,0 +1,23 @@
+{
+  "name": "Policy", "type": "object",
+  "properties": {
+    "quote_id": { "type": "string" },
+    "partner_id": { "type": "string" },
+    "partner_name": { "type": "string" },
+    "end_user_email": { "type": "string" },
+    "end_user_name": { "type": "string" },
+    "policy_number": { "type": "string" },
+    "coverage_type": { "type": "string" },
+    "policy_name": { "type": "string" },
+    "insurer_name": { "type": "string" },
+    "premium_paid": { "type": "number" },
+    "currency": { "type": "string", "default": "USD" },
+    "coverage_amount": { "type": "number" },
+    "start_date": { "type": "string", "format": "date" },
+    "end_date": { "type": "string", "format": "date" },
+    "status": { "type": "string", "enum": ["active","expired","cancelled","claimed"], "default": "active" },
+    "jurisdiction": { "type": "string" },
+    "certificate_url": { "type": "string" }
+  },
+  "required": ["partner_id", "end_user_email", "policy_name", "premium_paid"]
+}
